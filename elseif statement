@@ -1,0 +1,12 @@
+public class elseif {
+       public static void main(String[] args) {
+        int Age =15;
+        if(Age >18){
+            System.out.println("adult: drive,vote");
+        } else if (Age >= 13 && Age < 18 ){
+            System.out.println("Teenager");
+        } else{
+            System.out.println("child");
+        }
+    }
+}
