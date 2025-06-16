@@ -1,0 +1,54 @@
+class Node {
+    int data; // Data stored in the node 
+    Node next;  //Pointer to the next node in the list 
+
+    // Constructor to initialize the node
+    Node (int x){
+    data = x;
+    next = null;
+   }
+}
+public class sll {
+     static Node insertPos(Node head, int pos,int data){
+         if (pos<1) {
+            return head;
+            }
+            // head will change if pos =1 
+            if (pos == 1) {
+                Node new_Node = new Node(data);
+                new_Node.next = head;
+                return new_Node;
+            }
+            Node curr = head;
+            for (int i = 1; i<pos-1 && curr != null ; i++){
+                curr = curr.next;
+            }
+            // if position is greater than number of elements 
+            if (curr == null) 
+                return head;
+                
+                Node new_Node = new Node(data);
+                // update the next pointers 
+                new_Node.next = curr.next;
+                curr.next = new_Node;
+                return head ;
+            }
+            static void printList(Node node) {
+              while (node != null) {
+            System.out.println(" "+ node.data);
+            node = node.next;
+        }
+        System.out.println();
+    }
+    
+        public static void main(String[] args) {
+        Node head = new Node(3);
+        head.next = new Node(5);
+        head.next.next = new Node(8);
+         head.next.next.next = new Node(10);
+
+        int data = 12 , pos =3 ;
+        head = insertPos(head, pos, data);
+        printList(head);
+    }   
+}
