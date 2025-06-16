@@ -1,1 +1,43 @@
+// Java Program to insert the node at the beginning 
+// Singly linked list
+
+class Node {
+    int data; // Data stored in the node 
+    Node next;  //Pointer to the next node in the list 
+
+    // Constructor to initialize the node
+    Node (int new_data){
+    data = new_data;
+    next = null;
+   }
+}
+public class sll {
+    public static Node insertAtFront(Node head, int new_data){
+        Node new_node = new Node(new_data);
+        new_node.next= head;
+        return new_node;
+    }
+    public static void printList(Node head) {
+        Node curr = head;
+        while (curr != null) {
+            System.out.println(" "+ curr.data);
+            curr = curr.next;
+            
+        }
+        System.out.println();
+    }
+    public static void main(String[] args) {
+        Node head = new Node(2);
+        head.next = new Node(3);
+        head.next.next = new Node(4);
+         head.next.next.next = new Node(5);
+
+         System.out.println("Original linked list:");
+         printList(head);
+         System.out.println("After inserting node at the front:");
+         int data =1 ;
+         head = insertAtFront(head, data);
+         printList(head);
+    }
+}
 
