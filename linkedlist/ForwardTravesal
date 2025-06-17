@@ -1,4 +1,4 @@
-// Forward Traversal of Doubly linked list 
+// Iterative Forward Traversal of Doubly linked list 
 
 class Node{
       int data ;
