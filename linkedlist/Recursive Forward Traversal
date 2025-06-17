@@ -1,0 +1,36 @@
+class Node{
+      int data ;
+      Node next;
+       Node prev;
+
+     Node (int val){
+        data = val;
+        prev = null;
+        next = null;
+        }
+    }
+public class recursiveForwardTraversal {
+    static void forwardTraversal(Node head){
+       if (head== null) {
+           return;
+       }
+       System.out.print(head.data + " ");
+       forwardTraversal(head.next);
+    }
+    public static void main(String[] args) {
+    
+        Node head = new Node(1);
+        Node second = new Node(2);
+        Node third = new Node(3);
+
+        head.next = second;
+        second.prev= head;
+        second.next= third;
+        third.prev= second; 
+
+        System.out.print("Forward Traversal:");
+        forwardTraversal(head);
+    
+    }
+
+}
