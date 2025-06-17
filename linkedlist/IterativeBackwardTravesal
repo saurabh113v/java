@@ -1,3 +1,5 @@
+// java Program for Backword Traversal (Iterative) of
+//Doubly Linked list 
 class Node{
       int data ;
       Node next;
