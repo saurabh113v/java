@@ -1,0 +1,48 @@
+class Node{
+    int data;
+    Node next;
+    Node prev;
+    Node (int newData){
+        data = newData;
+        next = prev = null;
+    }
+}
+public class insertEndDll {
+    public static Node insertEnd(Node head, int newData){
+        Node newNode = new Node(newData);
+        if(head == null){
+            head = newNode;
+        } else {
+            Node curr = head;
+            while (curr.next != null){
+                curr = curr.next;
+            }
+                curr.next = newNode;
+                newNode.prev = curr;
+        }  
+        return head;
+        }
+        public static void printlist(Node head){
+            Node curr = head ; 
+            while (curr != null){
+                System.out.print(curr.data+ " ");
+                curr = curr.next;
+            }
+            System.out.println();
+        }
+        public static void main(String[] args) {
+            Node head = new Node(1);
+        head.next = new Node(2);
+        head.next.prev = head;
+        head.next.next = new Node(3);
+        head.next.next.prev = head.next;
+        System.out.println("Original linked list");
+        printlist(head);
+        System.out.println("After inserting Node at the ENd:");
+        int data = 4;
+        head = insertEnd(head,data);
+        printlist(head);
+        }
+
+
+}
