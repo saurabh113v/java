@@ -1,4 +1,4 @@
-// Java program to pairwise swap elements
+// Java program to pairwise swap elements using recursion
 // in a given linked list
 
 class Node {
