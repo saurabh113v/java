@@ -1,0 +1,18 @@
+import java.util.Arrays;
+
+public class leftRotate {
+  public static void main(String[] args) {
+    int arr[] = {1,2,3,4,5,6};
+    leftRotateElement(arr);
+    System.out.println("Left Rotate by one place :" +Arrays.toString(arr)); 
+    //Arrays.toString(arr)  -> This converts the array into a string format, like [2, 3, 4, 5, 1], which is easy to read.
+  }
+  static void leftRotateElement(int arr[]){
+    int temp = arr[0];
+    for(int i = 1; i<arr.length ; i++){
+      arr[i-1] = arr[i];
+    }
+    arr[arr.length-1] = temp;
+    
+  }
+}
